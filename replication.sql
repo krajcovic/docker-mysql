@@ -1,0 +1,4 @@
+CREATE USER docker@localhost IDENTIFIED BY docker;
+GRANT REPLICATION SLAVE ON *.* TO docker@localhost;
+CHANGE MASTER TO MASTER_HOST=localhost, MASTER_USER=docker, MASTER_PASSWORD=docker;
+START SLAVE;
